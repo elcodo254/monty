@@ -12,13 +12,12 @@ int opcode_struct(char *opcode, stack_t **stack, unsigned int line_number)
 	int i;
 
 	instruction_t opcodes[] = {
-	/*	{"push", push},*/
 		{"pall", pall},
-/*		{"pint", pint},
+		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add_},
-		{"pop", pop},*/
+		{"pop", pop},
 		{NULL, NULL}
 	};
 	for (i = 0; opcodes[i].opcode != NULL; i++)

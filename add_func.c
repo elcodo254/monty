@@ -5,7 +5,7 @@
  * @stack: stack
  * @line_number: line number
  */
-/*void add_(stack_t **stack, unsigned int line_number)
+void add_(stack_t **stack, unsigned int line_number)
 {
 
 	int first;
@@ -25,15 +25,15 @@
 	pop(stack, line_number);
 
 	(*stack)->n = result;
-}*/
+}
 
 /**
  * nop - doesn't do anything
  * @stack: stask
  * @line_number: line number
  */
-/*void nop(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-}*/
+}

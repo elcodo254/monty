@@ -22,7 +22,7 @@ void pall(stack_t **stack, unsigned int line_number)
  * @stack: pointer
  * @line_number: line number
  */
-/*void pint(stack_t **stack, unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	int val;
 
@@ -33,4 +33,4 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 	val = (*stack)->n;
 	printf("%d\n", val);
-}*/
+}

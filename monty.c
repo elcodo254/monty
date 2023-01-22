@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 	ssize_t read;
 	char *opcode;
 	stack_t *stack;
-/*	char *n;*/
 	unsigned int line_number = 0;
 
 	if (argc != 2)
@@ -40,7 +39,6 @@ int main(int argc, char *argv[])
 		if (strcmp(opcode, "push") == 0)
 		{
 			opcode = strtok(NULL, DELIMETERS);
-	/*		printf("%s\n", opcode);*/
 			push(&stack, line_number, opcode);
 		}
 		else

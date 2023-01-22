@@ -5,7 +5,7 @@
  * @stack: pointer
  * @line_number: line number
  */
-/*void pop(stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *next;
 
@@ -17,13 +17,13 @@
 	next = (*stack)->next;
 	free(*stack);
 	*stack = next;
-}*/
+}
 /**
  * swap - swaps the top two elements of the pack
  * @stack: pointer
  * @line_number: line number
  */
-/*void swap(stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	int tmp;
 	int temp;
@@ -38,4 +38,4 @@
 
 	(*stack)->n = temp;
 	(*stack)->next->n = tmp;
-}*/
+}
