@@ -49,8 +49,8 @@ void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number, char *n);
 /*void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-size_t stack_len(stack_t **stack);*/
+void swap(stack_t **stack, unsigned int line_number);*/
+size_t stack_len(stack_t **stack);
 void free_stack(stack_t **stack);
 void free_all(stack_t *stack, char *line, FILE *file);
 /*void add_(stack_t **stack, unsigned int line_number);

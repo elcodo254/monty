@@ -9,13 +9,13 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	char *line = NULL;
+	char *line;
 	size_t len = 0;
 	ssize_t read;
 	char *opcode;
 	stack_t *stack;
-	char *n;
-	unsigned int line_number = 1;
+/*	char *n;*/
+	unsigned int line_number = 0;
 
 	if (argc != 2)
 	{
@@ -29,7 +29,9 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	read = getline(&line, &len, file);
-	while (read != -1)
+	if (read == -1)
+		exit(EXIT_FAILURE);
+	while (read != -1 && read != EOF)
 	{
 		line_number++;
 		opcode = strtok(line, DELIMETERS);
@@ -37,11 +39,13 @@ int main(int argc, char *argv[])
 			continue;
 		if (strcmp(opcode, "push") == 0)
 		{
-			n = strtok(NULL, DELIMETERS);
-			push(&stack, line_number, n);
+			opcode = strtok(NULL, DELIMETERS);
+	/*		printf("%s\n", opcode);*/
+			push(&stack, line_number, opcode);
 		}
 		else
 			opcode_struct(opcode, &stack, line_number);
+		line_number++;
 	}
 	free_all(stack, line, file);
 	return (EXIT_SUCCESS);

@@ -12,6 +12,7 @@ int opcode_struct(char *opcode, stack_t **stack, unsigned int line_number)
 	int i;
 
 	instruction_t opcodes[] = {
+	/*	{"push", push},*/
 		{"pall", pall},
 /*		{"pint", pint},
 		{"pop", pop},
