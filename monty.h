@@ -43,7 +43,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-size_t getline(char **string, size_t *n, FILE *stream);
+ssize_t getline(char **string, size_t *n, FILE *stream);
 int opcode_struct(char *opcode, stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number, char *n);
