@@ -17,7 +17,7 @@ int opcode_struct(char *opcode, stack_t **stack, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add_},
-		{"pop", pop},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	for (i = 0; opcodes[i].opcode != NULL; i++)
