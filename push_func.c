@@ -9,14 +9,15 @@
  */
 void push(stack_t **stack, unsigned int line_number, char *n)
 {
-	stack_t *new;
+	stack_t *new = NULL;
 	int i;
 
-	if (n == NULL)
+	if (!n)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usages: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+	
 	for (i = 0; n[i] != '\0'; i++)
 	{
 		if (n[0] == '-')

@@ -9,12 +9,13 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	char *line;
+	char *line = NULL;
 	size_t len = 0;
-	ssize_t read;
+	ssize_t nread;
 	char *opcode;
-	stack_t *stack;
-	unsigned int line_number = 0;
+	char *n;
+	stack_t *stack = NULL;
+	unsigned int line_number;
 
 	if (argc != 2)
 	{
@@ -27,23 +28,22 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	read = getline(&line, &len, file);
-	if (read == -1)
-		exit(EXIT_FAILURE);
-	while (read != -1 && read != EOF)
+	line_number = 0;
+	while ((nread = getline(&line, &len, file)) != -1)
 	{
-		line_number++;
 		opcode = strtok(line, DELIMETERS);
-		if (opcode == NULL || strncmp(opcode, "#", 1) == 0)
+		if (strncmp(opcode, "#", 1) == 0)
 			continue;
 		if (strcmp(opcode, "push") == 0)
 		{
-			opcode = strtok(NULL, DELIMETERS);
-			push(&stack, line_number, opcode);
+			n = strtok(NULL, DELIMETERS);
+			push(&stack, line_number, n);
 		}
 		else
+		{
 			opcode_struct(opcode, &stack, line_number);
-		line_number++;
+		}
+
 	}
 	free_all(stack, line, file);
 	return (EXIT_SUCCESS);
