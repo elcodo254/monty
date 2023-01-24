@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 		opcode = strtok(line, DELIMETERS);
 		if (opcode == NULL || strncmp(opcode, "#", 1) == 0)
 			continue;
+
 		if (strcmp(opcode, "push") == 0)
 		{
 			n = strtok(NULL, DELIMETERS);

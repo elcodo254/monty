@@ -10,7 +10,7 @@
 #include <fcntl.h>
 #include <ctype.h>
 
-#define DELIMETERS "\n\t\r "
+#define DELIMETERS ";\n\t\r "
 
 /**
  * struct stack_s - doubly linked representation of a stack( or queue)
