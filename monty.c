@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	while ((nread = getline(&line, &len, file)) != -1)
 	{
 		opcode = strtok(line, DELIMETERS);
-		if (strncmp(opcode, "#", 1) == 0)
+		if (opcode == NULL || strncmp(opcode, "#", 1) == 0)
 			continue;
 		if (strcmp(opcode, "push") == 0)
 		{
