@@ -43,3 +43,29 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 	}
 	*stack = new;
 }
+
+/**
+ * pstr - prints string strting at the top with elements in ascii
+ * @stack: double pointer to a stack
+ * @line_number: line number
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	int c;
+	stack_t *current;
+	(void)line_number;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		c = current->n;
+		if (c > 0 && c <= 127)
+		{
+			current = current->next;
+			putchar(c);
+		}
+		else
+			break;
+	}
+	putchar('\n');
+}
