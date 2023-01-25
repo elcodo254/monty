@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
 	line_number = 0;
 	while ((nread = getline(&line, &len, file)) != -1)
 	{
-		line_number++;
 		opcode = strtok(line, DELIMETERS);
 		if (opcode == NULL || strncmp(opcode, "#", 1) == 0)
 			continue;
