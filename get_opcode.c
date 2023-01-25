@@ -21,6 +21,7 @@ int opcode_struct(char *opcode, stack_t **stack, unsigned int line_number)
 		{"sub", sub_},
 		{"div", div_},
 		{"mul", mul_},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	for (i = 0; opcodes[i].opcode != NULL; i++)

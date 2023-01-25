@@ -45,3 +45,28 @@ void mul_(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 	(*stack)->n = result;
 }
+/**
+ * mod - computes the rest of the division
+ * @stack: stack
+ * @line_number: line number
+ */
+void mod(stack_t **stack, unsigned int line_number)
+{
+	int a, b, result;
+
+	if (stack_len(stack) < 2)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	a = (*stack)->n;
+	b = (*stack)->next->n;
+	if (a == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	result = b % a;
+	pop(stack, line_number);
+	(*stack)->n = result;
+}
