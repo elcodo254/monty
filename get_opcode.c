@@ -19,6 +19,7 @@ int opcode_struct(char *opcode, stack_t **stack, unsigned int line_number)
 		{"add", add_},
 		{"nop", nop},
 		{"sub", sub_},
+		{"div", div_},
 		{NULL, NULL}
 	};
 	for (i = 0; opcodes[i].opcode != NULL; i++)
