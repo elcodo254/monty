@@ -35,3 +35,20 @@ void pint(stack_t **stack, unsigned int line_number)
 	val = (*stack)->n;
 	printf("%d\n", val);
 }
+/**
+ * pchar - prints char at the top of the stack
+ * @stack: stack
+ * @line_number: line number
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	int c;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	putchar(c);
+	putchar('\n');
+}
