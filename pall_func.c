@@ -19,7 +19,7 @@ void pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pint - printsthe value at the top of the stack
+ * pint - prints the value at the top of the stack
  * @stack: pointer
  * @line_number: line number
  */
